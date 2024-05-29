@@ -6,6 +6,7 @@ import Goal from './components/Goal'; // Import the Goal component
 import Score from './components/Score';
 import PlayerControls from './components/PlayerControls'; // Import the PlayerControls component
 import Goalkeeper from './components/Goalkeeper';
+import HalfLine from './components/HalfLine';
 // ... (the rest of the code)
 
 const AppContainer = styled.div`
@@ -43,6 +44,8 @@ function App() {
       <Goalkeeper position={goalkeeperPosition} />
       <Score goals={score} />
       <PlayerControls onKick={handleGoal} />
+      <HalfLine /> {/* Render the HalfLine component */}
+
     </AppContainer>
   );
 }
