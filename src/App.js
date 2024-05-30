@@ -7,6 +7,7 @@ import Score from './components/Score';
 import PlayerControls from './components/PlayerControls'; // Import the PlayerControls component
 import Goalkeeper from './components/Goalkeeper';
 import HalfLine from './components/HalfLine';
+import RoundDisplay from './components/RoundDisplay';
 // ... (the rest of the code)
 
 const AppContainer = styled.div`
@@ -21,6 +22,8 @@ function App() {
   const [score, setScore] = useState(0);
   const [goalHeight, setGoalHeight] = useState(100);
   const [goalkeeperPosition, setGoalkeeperPosition] = useState(0);
+  const [round, setRound] = useState(1);
+
 
   const handleGoal = (power, direction) => {
     // Implement logic to check if the shot is a goal
@@ -45,6 +48,7 @@ function App() {
       <Score goals={score} />
       <PlayerControls onKick={handleGoal} />
       <HalfLine /> {/* Render the HalfLine component */}
+      <RoundDisplay round={round} />
 
     </AppContainer>
   );
